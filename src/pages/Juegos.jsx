@@ -182,10 +182,10 @@ export default function Juegos() {
                 >
                   <Link
                     to={`/juegos/${game.slug}`}
-                    className="group block rounded-[2rem]"
+                    className="group block rounded-4xl"
                   >
-                    <div className="rounded-[2rem] border border-white/10 bg-white p-4 text-slate-900 shadow-[0_20px_45px_rgba(0,0,0,0.28)] transition-transform duration-300 ease-out group-hover:-translate-y-2 group-hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)]">
-                      <div className="mb-4 flex aspect-[4/3] items-center justify-center rounded-[1.5rem] bg-[linear-gradient(180deg,#dbeafe,#cbd5e1)] text-5xl shadow-inner">
+                    <div className="rounded-4xl border border-white/10 bg-white p-4 text-slate-900 shadow-[0_20px_45px_rgba(0,0,0,0.28)] transition-transform duration-300 ease-out group-hover:-translate-y-2 group-hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)]">
+                      <div className="mb-4 flex aspect-4/3 items-center justify-center rounded-3xl bg-[linear-gradient(180deg,#dbeafe,#cbd5e1)] text-5xl shadow-inner">
                         
                       </div>
 

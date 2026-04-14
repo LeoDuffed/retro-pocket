@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function FeaturedGame() {
   return (
     <section className="rounded-4xl border border-white/10 bg-white p-5 shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
@@ -15,9 +17,12 @@ export default function FeaturedGame() {
             compacta y perfecta para una consola retro programable.
           </p>
 
-          <button className="mt-4 inline-flex rounded-xl bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800">
-            Ver juego
-          </button>
+          <Link 
+            className="mt-4 inline-flex rounded-xl bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800"
+            to={`/juegos/tetris`} 
+          >
+              Ver juego
+          </Link>
         </div>
       </div>
     </section>

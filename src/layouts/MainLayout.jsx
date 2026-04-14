@@ -9,7 +9,7 @@ export default function MainLayout() {
         
         <header className="mb-10 flex flex-col gap-5 md:flex-row md:items-center md:gap-105 pl-8">
           <div className="flex items-center gap-3 pl-8">
-            <span className="text-2xl">🕹️</span>
+            <span className="text-2xl text-cyan-200">RP</span>
             <p className="text-2xl font-bold tracking-wide text-white ">
               Retro Pocket
             </p>
