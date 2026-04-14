@@ -9,7 +9,7 @@ const games = [
 
 export default function GamesPanel() {
   return (
-    <aside className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-4 shadow-[0_10px_40px_rgba(0,0,0,0.35)] backdrop-blur-sm">
+    <aside className="rounded-4xl border border-white/10 bg-white/6 p-4 shadow-[0_10px_40px_rgba(0,0,0,0.35)] backdrop-blur-sm m-10">
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-lg font-semibold text-white">Juegos</h2>
         <span className="rounded-full bg-cyan-400/15 px-3 py-1 text-xs font-medium text-cyan-300">
@@ -17,7 +17,7 @@ export default function GamesPanel() {
         </span>
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-3 mt-8">
         {games.map((game, index) => (
           <Link
             key={game.id}
@@ -39,6 +39,7 @@ export default function GamesPanel() {
           </Link>
         ))}
       </div>
+      
     </aside>
   );
 }
