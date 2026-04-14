@@ -9,14 +9,14 @@ const navItems = [
 export default function Navbar() {
   return (
     <div className="flex justify-start">
-      <nav className="flex items-center gap-12 rounded-full border border-white/15 bg-white/10 px-12 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.35)] backdrop-blur-md">
+      <nav className="liquid-nav flex items-center gap-12 rounded-full px-12 py-4">
         {navItems.map((item) => (
           <NavLink
             key={item.to}
             to={item.to}
             className={({ isActive }) =>
               `text-base font-medium transition ${
-                isActive ? "text-cyan-300" : "text-white/85 hover:text-cyan-300"
+                isActive ? "text-cyan-200" : "text-white/80 hover:text-cyan-200"
               }`
             }
           >

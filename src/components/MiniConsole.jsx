@@ -3,7 +3,7 @@ export default function MiniConsole() {
     <div className="relative mx-auto flex w-full max-w-md items-center justify-center">
       <div className="absolute inset-x-10 top-8 h-28 rounded-full bg-cyan-400/20 blur-3xl" />
 
-      <div className="animate-[float_3.8s_ease-in-out_infinite] rounded-[2.5rem] border border-white/15 bg-[#d9dde6] p-5 shadow-[0_25px_60px_rgba(0,0,0,0.45)]">
+      <div className="animate-[float_3.8s_ease-in-out_infinite] rounded-[2.5rem] border border-white/15 bg-black/40 p-5 shadow-[0_25px_60px_rgba(0,0,0,0.45)]">
         <div className="w-72.5 rounded-4xl bg-[#cfd4dc] p-4 shadow-inner">
           <div className="mb-4 flex items-center justify-between px-1">
             <div className="flex items-center gap-2">
