@@ -25,7 +25,7 @@ export default function GamesPanel() {
             className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white px-4 py-3 text-slate-800 transition duration-200 hover:-translate-y-0.5 hover:shadow-lg"
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-sm font-bold text-cyan-300">
-              0{index + 1}
+              
             </div>
 
             <div className="flex-1">
