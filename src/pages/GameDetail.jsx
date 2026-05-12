@@ -229,9 +229,12 @@ export default function GameDetail() {
 
                 <div className="mt-5 rounded-xl bg-white p-4 shadow-sm">
                   <p className="text-sm text-slate-500">Tamaño del archivo</p>
-                  <p className="mt-1 text-2xl font-bold text-slate-900">
-                    {game.size}
-                  </p>
+                  <div className="flex col-auto">
+                    <p className="mt-1 text-2xl font-bold text-slate-900">
+                      {game.size} 
+                    </p>
+                    <p className="text-black/60 pt-2.5  pl-2">bites</p>
+                  </div>
                 </div>
 
                 <div className="mt-5 grid gap-3">

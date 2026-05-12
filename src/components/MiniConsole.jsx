@@ -1,4 +1,15 @@
 export default function MiniConsole() {
+  const ship = [
+    "00100000100",
+    "00010001000",
+    "00111111100",
+    "01101110110",
+    "11111111111",
+    "10111111101",
+    "10100000101",
+    "00011011000",
+  ];
+
   return (
     <div className="relative mx-auto flex w-full max-w-md items-center justify-center">
       <div className="absolute inset-x-10 top-8 h-28 rounded-full bg-cyan-400/20 blur-3xl" />
@@ -22,17 +33,22 @@ export default function MiniConsole() {
             <div className="relative flex aspect-4/3 items-center justify-center overflow-hidden rounded-2xl bg-[#87c0a8]">
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(255,255,255,0.08)_50%,transparent_100%)] bg-size-[100%_8px] opacity-50" />
 
-              <div className="grid grid-cols-6 gap-1 opacity-80">
-                {Array.from({ length: 24 }).map((_, index) => (
-                  <div
-                    key={index}
-                    className={`h-4 w-4 rounded-[3px] ${
-                      index % 5 === 0 || index % 7 === 0
-                        ? "bg-[#214e34] animate-pulse"
-                        : "bg-[#5f8f6d]"
-                    }`}
-                  />
-                ))}
+              <div className="grid grid-cols-[repeat(11,minmax(0,1fr))] gap-1 opacity-85">
+                {ship.flatMap((row, rowIndex) =>
+                  row.split("").map((pixel, colIndex) => {
+                    const on = pixel === "1";
+                    return (
+                      <div
+                        key={`${rowIndex}-${colIndex}`}
+                        className={`h-3.5 w-3.5 rounded-[3px] ${
+                          on
+                            ? "bg-[#214e34] animate-pulse"
+                            : "bg-[rgba(95,143,109,0.35)]"
+                        }`}
+                      />
+                    );
+                  })
+                )}
               </div>
             </div>
           </div>
@@ -43,7 +59,7 @@ export default function MiniConsole() {
               <div className="h-8 w-8 rounded-md bg-[#5f6877] shadow" />
               <div />
               <div className="h-8 w-8 rounded-md bg-[#5f6877] shadow" />
-              <div className="h-8 w-8 rounded-md bg-[#4c5564] shadow" />
+              <div className="h-8 w-8 rounded-md bg-[#cfd4dc] " />
               <div className="h-8 w-8 rounded-md bg-[#5f6877] shadow" />
               <div />
               <div className="h-8 w-8 rounded-md bg-[#5f6877] shadow" />
@@ -51,8 +67,12 @@ export default function MiniConsole() {
             </div>
 
             <div className="flex gap-4">
-              <div className="h-11 w-11 rounded-full bg-rose-500 shadow-lg" />
-              <div className="h-11 w-11 rounded-full bg-amber-400 shadow-lg" />
+              <div className="h-11 w-11 rounded-full bg-rose-500 shadow-lg">
+                <h1 className="text-center pt-2 font-bold">A</h1>
+              </div>
+              <div className="h-11 w-11 rounded-full bg-sky-400 shadow-lg">
+                <h1 className="text-center pt-2 font-bold">B</h1>
+              </div>
             </div>
           </div>
         </div>

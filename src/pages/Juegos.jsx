@@ -44,15 +44,17 @@ const games = [
     slug: "pong",
     genre: "Arcade",
     difficulty: "Media",
-    description: "Sobrevive al ataque de las naves eliminándolas.",
+    description: "No pierdas la pelota, haz que rebote sin parar.",
+    logoSrc: "/img/pong.png",
   },
   {
     id: 6,
-    title: "Tetris",
-    slug: "tetris",
+    title: "Flapy",
+    slug: "flapy",
     genre: "Arcade",
-    difficulty: "Media",
-    description: "Sobrevive al ataque de las naves eliminándolas.",
+    difficulty: "Difícil",
+    description: "No le peges a las columnas y avanza lo mas que puedas.",
+    logoSrc: "/img/flapy.png"
   },
   {
     id: 7,
