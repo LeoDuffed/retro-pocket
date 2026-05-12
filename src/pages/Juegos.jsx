@@ -9,6 +9,7 @@ const games = [
     genre: "Arcade",
     difficulty: "Media",
     description: "Crece lo más posible sin chocar.",
+    logoSrc: "/img/snake.png",
   },
   {
     id: 2,
@@ -17,6 +18,7 @@ const games = [
     genre: "Arcade",
     difficulty: "Media",
     description: "Rompe todos los bloques y evita que la pelota caiga.",
+    logoSrc: "/img/breakout.png",
   },
   {
     id: 3,
@@ -25,38 +27,41 @@ const games = [
     genre: "Arcade",
     difficulty: "Fácil",
     description: "Esquiva los objetos que caen del cielo.",
+    logoSrc: "/img/dodge.png",
   },
   {
     id: 4,
-    title: "Pong",
-    slug: "pong",
+    title: "Space Invaders",
+    slug: "space",
     genre: "Arcade",
-    difficulty: "Fácil",
-    description: "Devuelve la pelota y domina el ritmo del juego.",
+    difficulty: "Difícil",
+    description: "Sobrevive al ataque de las naves eliminándolas.",
+    logoSrc: "/img/space.png",
   },
   {
     id: 5,
-    title: "Tetris",
-    slug: "tetris",
-    genre: "Puzzle",
-    difficulty: "Difícil",
-    description: "Acomoda piezas y limpia líneas sin parar.",
+    title: "Pong",
+    slug: "pong",
+    genre: "Arcade",
+    difficulty: "Media",
+    description: "Sobrevive al ataque de las naves eliminándolas.",
   },
   {
     id: 6,
-    title: "Space Invaders",
-    slug: "spaceinvaders",
+    title: "Tetris",
+    slug: "tetris",
     genre: "Arcade",
     difficulty: "Media",
-    description: "Sobrevive al ataque de las naves eliminandolas.",
+    description: "Sobrevive al ataque de las naves eliminándolas.",
   },
   {
     id: 7,
-    title: "Jump",
+    title: "Jump N Run",
     slug: "jump",
-    genre: "Skill",
+    genre: "Arcade",
     difficulty: "Media",
-    description: "Salta los obtaculos.",
+    description: "Salta los obstaculos que encuentres.",
+    logoSrc: "/img/jump.png",
   },
 ];
 
@@ -154,6 +159,9 @@ export default function Juegos() {
             <p className="mt-3 max-w-2xl text-sm leading-7 text-white/75 md:text-base">
               Explora los minijuegos disponibles para Retro Pocket.
             </p>
+            <span className="mt-4 inline-flex items-center rounded-full bg-cyan-400/15 px-3 py-1 text-xs font-medium text-cyan-300">
+              {games.length} disponible{games.length === 1 ? "" : "s"}
+            </span>
           </div>
 
           <div className="flex items-center gap-3">
@@ -195,7 +203,6 @@ export default function Juegos() {
                   style={{
                     width: state.width,
                     zIndex: state.z,
-                    opacity: state.opacity,
                     transform: `translate(-50%, -50%) translate(${
                       state.x + centerOffset
                     }px, ${state.y}px) scale(${state.scale})`,
@@ -209,8 +216,13 @@ export default function Juegos() {
                     className="group block rounded-4xl"
                   >
                     <div className="rounded-4xl border border-white/10 bg-white p-4 text-slate-900 shadow-[0_20px_45px_rgba(0,0,0,0.28)] transition-transform duration-300 ease-out group-hover:-translate-y-2 group-hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)]">
-                      <div className="mb-4 flex aspect-4/3 items-center justify-center rounded-3xl bg-[linear-gradient(180deg,#dbeafe,#cbd5e1)] text-5xl shadow-inner">
-                        
+                      <div className="mb-4 flex aspect-4/3 items-center justify-center overflow-hidden rounded-3xl bg-slate-950 shadow-inner">
+                        <img
+                          src={game.logoSrc}
+                          alt={`Logo de ${game.title}`}
+                          className="h-full w-full object-contain p-3"
+                          loading="lazy"
+                        />
                       </div>
 
                       <div className="flex items-start justify-between gap-3">

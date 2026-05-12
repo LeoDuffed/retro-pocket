@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -8,12 +8,20 @@ export default function MainLayout() {
       <div className="mx-auto max-w-7xl">
         
         <header className="mb-10 flex flex-col gap-5 md:flex-row md:items-center md:gap-105 pl-8">
-          <div className="flex items-center gap-3 pl-8">
-            <span className="text-2xl text-cyan-200">RP</span>
-            <p className="text-2xl font-bold tracking-wide text-white ">
+          <Link
+            to="/"
+            className="flex items-center gap-3 pl-8 transition-opacity hover:opacity-95"
+          >
+            <img
+              src="/img/logo.png"
+              alt="Logo de Retro Pocket"
+              className="h-10 w-10 object-contain"
+              loading="eager"
+            />
+            <p className="text-2xl font-bold tracking-wide text-white">
               Retro Pocket
             </p>
-          </div>
+          </Link>
 
           <Navbar />
         </header>

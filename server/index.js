@@ -21,6 +21,8 @@ const games = {
     snake: "snake/main.hex",
     breakout: "breakout/main.hex",
     dodge: "dodge/main.hex",
+    space: "space/main.hex",
+    jump: "jump/main.hex",
 };
 
 let cachedSerialPort = null;

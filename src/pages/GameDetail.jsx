@@ -11,9 +11,9 @@ const games = {
       "Haz crecer la serpiente comiendo puntos sin chocar contra los bordes ni contigo mismo.",
     longDescription:
       "Snake es un clásico absoluto de los juegos compactos. En esta versión para Retro Pocket, la serpiente aumenta de tamaño con cada punto consumido y el desafío crece conforme disminuye el espacio disponible. Es un excelente ejemplo de minijuego simple, divertido y perfecto para hardware embebido.",
-    controls: ["Arriba", "Abajo", "Izquierda", "Derecha", "Iniciar"],
+    controls: ["Arriba", "Abajo", "Izquierda", "Derecha", "Pausa"],
     tags: ["Arcade", "Retro", "Puntaje", "1 jugador", "Clásico"],
-    size: "00000",
+    size: "2818",
     players: "1 jugador",
   },
   breakout: {
@@ -25,9 +25,9 @@ const games = {
       "Rompe todos los bloques usando la pelota y evita perderla. Una adaptación compacta y retro para Retro Pocket.",
     longDescription:
       "Breakout es un juego clásico de acción y reflejos en el que el objetivo es destruir todos los bloques de la pantalla utilizando una pelota que rebota constantemente. En esta versión para Retro Pocket, el diseño está pensado para partidas rápidas, controles simples y una experiencia ideal para una consola retro programable basada en ATmega16A.",
-    controls: ["Mover izquierda", "Mover derecha", "Iniciar/Reiniciar"],
+    controls: ["Mover izquierda", "Mover derecha", "Pausa"],
     tags: ["Arcade", "Reflejos", "Retro", "1 jugador", "Rápido"],
-    size: "00000",
+    size: "2178",
     players: "1 jugador",
   },
   dodge: {
@@ -36,29 +36,43 @@ const games = {
     genre: "Arcade",
     difficulty: "Fácil",
     description:
-      "Rompe todos los bloques usando la pelota y evita perderla. Una adaptación compacta y retro para Retro Pocket.",
+      "Esquiva los obstáculos que caen y sobrevive el mayor tiempo posible. Reflejos rápidos y partidas cortas.",
     longDescription:
-      "Breakout es un juego clásico de acción y reflejos en el que el objetivo es destruir todos los bloques de la pantalla utilizando una pelota que rebota constantemente. En esta versión para Retro Pocket, el diseño está pensado para partidas rápidas, controles simples y una experiencia ideal para una consola retro programable basada en ATmega16A.",
-    controls: ["Mover izquierda", "Mover derecha", "Iniciar/Reiniciar"],
-    tags: ["Arcade", "Reflejos", "Retro", "1 jugador", "Rápido"],
-    size: "00000",
+      "Dodge Obstacles es un juego de reflejos en el que controlas a tu personaje en la parte inferior de la pantalla. Tu objetivo es esquivar los objetos que caen y mantenerte con vida el mayor tiempo posible. Conforme pasa el tiempo, el ritmo se vuelve más intenso y cada movimiento cuenta. Perfecto para competir por la mejor marca en Retro Pocket.",
+    controls: ["Mover izquierda", "Mover derecha", "Pausa"],
+    tags: ["Arcade", "Reflejos", "Supervivencia", "1 jugador", "Rápido"],
+    size: "2356",
+    players: "1 jugador",
+  },
+  space: {
+    slug: "space",
+    title: "Space Invaders",
+    genre: "Arcade",
+    difficulty: "Difícil",
+    description:
+      "Defiende tu base: muévete, dispara y elimina oleadas de invasores antes de que lleguen al suelo.",
+    longDescription:
+      "Space Invaders es un clásico de los arcades: controlas una nave en la parte inferior y debes derribar a los invasores que avanzan en formación. Cada oleada se vuelve más rápida y peligrosa, así que tendrás que elegir bien tus disparos y moverte con precisión para sobrevivir. Una experiencia retro directa y adictiva, ideal para Retro Pocket.",
+    controls: ["Mover izquierda", "Mover derecha", "Disparar", "Pausa"],
+    tags: ["Arcade", "Shooter", "Retro", "1 jugador", "Oleadas"],
+    size: "3658",
+    players: "1 jugador",
+  },
+  jump: {
+    slug: "jump",
+    title: "Jump N Run",
+    genre: "Arcade",
+    difficulty: "Media",
+    description:
+      "Corre y salta para esquivar obstáculos. Llega lo más lejos posible sin chocar y mejora tu marca.",
+    longDescription:
+      "Jump N Run es un minijuego de plataformas estilo runner pensado para partidas rápidas en Retro Pocket. Tu personaje avanza y el reto es saltar a tiempo para evitar los obstáculos que aparecen en el camino. A medida que progresas el ritmo se vuelve más exigente, así que la precisión y el timing son clave para conseguir la mejor distancia.",
+    controls: ["Saltar", "Pausa"],
+    tags: ["Arcade", "Plataformas", "Runner", "1 jugador", "Reflejos"],
+    size: "922",
     players: "1 jugador",
   },
   /*
-  pong: {
-    slug: "pong",
-    title: "Pong",
-    genre: "Arcade",
-    difficulty: "Fácil",
-    description:
-      "Controla tu barra y devuelve la pelota en uno de los juegos más icónicos de todos los tiempos.",
-    longDescription:
-      "Pong es uno de los títulos más representativos de la historia de los videojuegos. Esta adaptación para Retro Pocket mantiene la esencia del juego original con una interfaz minimalista y controles sencillos, ideal para sesiones rápidas y demostraciones del sistema.",
-    controls: ["Mover arriba", "Mover abajo", "Iniciar partida"],
-    tags: ["Arcade", "Clásico", "Retro", "1 jugador", "Reflejos"],
-    size: "00000",
-    players: "1 jugador",
-  },
   tetris: {
     slug: "tetris",
     title: "Tetris",
