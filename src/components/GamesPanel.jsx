@@ -19,7 +19,7 @@ export default function GamesPanel() {
       </div>
 
       <div className="space-y-3 mt-8">
-        {games.map((game, index) => (
+        {games.map((game) => (
           <Link
             key={game.id}
             to={game.path}
