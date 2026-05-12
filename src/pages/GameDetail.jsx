@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 const games = {
   breakout: {
+    slug: "breakout",
     title: "Breakout",
     genre: "Arcade",
     difficulty: "Media",
@@ -16,6 +17,7 @@ const games = {
     players: "1 jugador",
   },
   pong: {
+    slug: "pong",
     title: "Pong",
     genre: "Arcade",
     difficulty: "Fácil",
@@ -29,6 +31,7 @@ const games = {
     players: "1 jugador",
   },
   snake: {
+    slug: "snake",
     title: "Snake",
     genre: "Arcade",
     difficulty: "Media",
@@ -42,6 +45,7 @@ const games = {
     players: "1 jugador",
   },
   tetris: {
+    slug: "tetris",
     title: "Tetris",
     genre: "Puzzle",
     difficulty: "Difícil",
@@ -77,6 +81,25 @@ export default function GameDetail() {
 
   const [selectedShot, setSelectedShot] = useState(0);
   const [favorite, setFavorite] = useState(false);
+
+  const uploadGame = async () => {
+    try{
+      const response = await fetch(`http://localhost:3001/api/upload/${game.slug}`, { method: "POST" } );
+      
+      const data = await response.json();
+    
+      if(data.ok){
+        alert("Juego cargado");
+      } else {
+        alert("Error cargando");
+        console.error(data);
+      }
+    
+    } catch(err){
+      console.error(err);
+      alert("Error conectando al servidor");
+    }
+  };
 
   if (!game) {
     return (
@@ -182,7 +205,10 @@ export default function GameDetail() {
                 </div>
 
                 <div className="mt-5 grid gap-3">
-                  <button className="rounded-xl bg-red-500 px-5 py-3 font-semibold text-white transition hover:bg-red-600">
+                  <button 
+                    onClick={uploadGame}
+                    className="rounded-xl bg-red-500 px-5 py-3 font-semibold text-white transition hover:bg-red-600"
+                  >
                     Cargar a consola
                   </button>
 
