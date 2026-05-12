@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 
 const games = [
-  { id: 1, name: "Snake", path: "/juegos/snake" },
-  { id: 2, name: "Breakout", path: "/juegos/breakout" },
-  { id: 3, name: "Dodge", path: "/juegos/dodge" },
-  //{ id: 2, name: "Pong", path: "/juegos/pong" },
-  //{ id: 4, name: "Tetris", path: "/juegos/tetris" },
+  { id: 1, name: "Snake", path: "/juegos/snake", logoSrc: "/img/snake.png" },
+  { id: 2, name: "Breakout", path: "/juegos/breakout", logoSrc: "/img/breakout.png" },
+  { id: 3, name: "Dodge", path: "/juegos/dodge", logoSrc: "/img/dodge.png" },
+  { id: 4, name: "Space Invaders", path: "/juegos/space", logoSrc: "/img/space.png" },
 ];
 
 export default function GamesPanel() {
@@ -14,7 +13,7 @@ export default function GamesPanel() {
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-lg font-semibold text-white">Juegos</h2>
         <span className="rounded-full bg-cyan-400/15 px-3 py-1 text-xs font-medium text-cyan-300">
-          4 disponibles
+          {games.length} disponible{games.length === 1 ? "" : "s"}
         </span>
       </div>
 
@@ -25,8 +24,13 @@ export default function GamesPanel() {
             to={game.path}
             className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white px-4 py-3 text-slate-800 transition duration-200 hover:-translate-y-0.5 hover:shadow-lg"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-sm font-bold text-cyan-300">
-              
+            <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-slate-900">
+              <img
+                src={game.logoSrc}
+                alt={`Logo de ${game.name}`}
+                className="h-full w-full object-contain"
+                loading="lazy"
+              />
             </div>
 
             <div className="flex-1">
