@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
 const games = [
-  { id: 1, name: "Breakout", path: "/juegos/breakout" },
-  { id: 2, name: "Pong", path: "/juegos/pong" },
-  { id: 3, name: "Snake", path: "/juegos/snake" },
-  { id: 4, name: "Tetris", path: "/juegos/tetris" },
+  { id: 1, name: "Snake", path: "/juegos/snake" },
+  { id: 2, name: "Breakout", path: "/juegos/breakout" },
+  { id: 3, name: "Dodge", path: "/juegos/dodge" },
+  //{ id: 2, name: "Pong", path: "/juegos/pong" },
+  //{ id: 4, name: "Tetris", path: "/juegos/tetris" },
 ];
 
 export default function GamesPanel() {

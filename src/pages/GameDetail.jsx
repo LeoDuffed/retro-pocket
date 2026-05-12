@@ -2,6 +2,20 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 const games = {
+  snake: {
+    slug: "snake",
+    title: "Snake",
+    genre: "Arcade",
+    difficulty: "Media",
+    description:
+      "Haz crecer la serpiente comiendo puntos sin chocar contra los bordes ni contigo mismo.",
+    longDescription:
+      "Snake es un clásico absoluto de los juegos compactos. En esta versión para Retro Pocket, la serpiente aumenta de tamaño con cada punto consumido y el desafío crece conforme disminuye el espacio disponible. Es un excelente ejemplo de minijuego simple, divertido y perfecto para hardware embebido.",
+    controls: ["Arriba", "Abajo", "Izquierda", "Derecha", "Iniciar"],
+    tags: ["Arcade", "Retro", "Puntaje", "1 jugador", "Clásico"],
+    size: "00000",
+    players: "1 jugador",
+  },
   breakout: {
     slug: "breakout",
     title: "Breakout",
@@ -16,6 +30,21 @@ const games = {
     size: "00000",
     players: "1 jugador",
   },
+  dodge: {
+    slug: "dodge",
+    title: "Dodge Obstacles",
+    genre: "Arcade",
+    difficulty: "Fácil",
+    description:
+      "Rompe todos los bloques usando la pelota y evita perderla. Una adaptación compacta y retro para Retro Pocket.",
+    longDescription:
+      "Breakout es un juego clásico de acción y reflejos en el que el objetivo es destruir todos los bloques de la pantalla utilizando una pelota que rebota constantemente. En esta versión para Retro Pocket, el diseño está pensado para partidas rápidas, controles simples y una experiencia ideal para una consola retro programable basada en ATmega16A.",
+    controls: ["Mover izquierda", "Mover derecha", "Iniciar/Reiniciar"],
+    tags: ["Arcade", "Reflejos", "Retro", "1 jugador", "Rápido"],
+    size: "00000",
+    players: "1 jugador",
+  },
+  /*
   pong: {
     slug: "pong",
     title: "Pong",
@@ -27,20 +56,6 @@ const games = {
       "Pong es uno de los títulos más representativos de la historia de los videojuegos. Esta adaptación para Retro Pocket mantiene la esencia del juego original con una interfaz minimalista y controles sencillos, ideal para sesiones rápidas y demostraciones del sistema.",
     controls: ["Mover arriba", "Mover abajo", "Iniciar partida"],
     tags: ["Arcade", "Clásico", "Retro", "1 jugador", "Reflejos"],
-    size: "00000",
-    players: "1 jugador",
-  },
-  snake: {
-    slug: "snake",
-    title: "Snake",
-    genre: "Arcade",
-    difficulty: "Media",
-    description:
-      "Haz crecer la serpiente comiendo puntos sin chocar contra los bordes ni contigo mismo.",
-    longDescription:
-      "Snake es un clásico absoluto de los juegos compactos. En esta versión para Retro Pocket, la serpiente aumenta de tamaño con cada punto consumido y el desafío crece conforme disminuye el espacio disponible. Es un excelente ejemplo de minijuego simple, divertido y perfecto para hardware embebido.",
-    controls: ["Arriba", "Abajo", "Izquierda", "Derecha", "Iniciar"],
-    tags: ["Arcade", "Retro", "Puntaje", "1 jugador", "Clásico"],
     size: "00000",
     players: "1 jugador",
   },
@@ -64,6 +79,7 @@ const games = {
     size: "00000",
     players: "1 jugador",
   },
+  */
 };
 
 function InfoRow({ label, value }) {

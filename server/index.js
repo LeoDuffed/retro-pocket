@@ -14,7 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const PORT = 3001;
-const SERIAL_PORT = "/dev/tty.usbserial-120"; // esta puede cambiar (arreglar)
+const SERIAL_PORT = "/dev/tty.usbserial-1120"; // esta puede cambiar (arreglar)
 
 const FQBN = "MightyCore:avr:32:clock=8MHz_internal,BOD=2v7,eeprom=keep,LTO=Os_flto,pinout=standard,bootloader=uart0,baudrate=9600,JTAG=disabled";
 
