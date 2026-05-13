@@ -10,16 +10,16 @@ export default function FeaturedGame() {
       <div className="mt-4 flex gap-4">
 
         <div className="flex-1">
-          <h3 className="text-2xl font-bold text-slate-900">Tetris</h3>
+          <h3 className="text-2xl font-bold text-slate-900">Space Invaders</h3>
 
           <p className="mt-2 text-sm leading-6 text-slate-600">
-            El clásico juego de bloques llega a Retro Pocket con una estética
+            El clásico juego de naves llega a Retro Pocket con una estética
             compacta y perfecta para una consola retro programable.
           </p>
 
           <Link 
             className="mt-4 inline-flex rounded-xl bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800"
-            to={`/juegos/tetris`} 
+            to={`/juegos/space`} 
           >
               Ver juego
           </Link>
