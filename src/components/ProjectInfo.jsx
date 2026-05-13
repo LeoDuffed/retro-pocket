@@ -8,7 +8,7 @@ export default function ProjectInfo() {
       <h3 className="mt-3 text-2xl font-bold text-white">Retro Pocket</h3>
 
       <p className="mt-3 text-sm leading-7 text-white/75">
-        Consola retro programable basada en ATmega16A, diseñada para cargar y
+        Consola retro programable basada en ATmega32A, diseñada para cargar y
         jugar minijuegos simples mediante una interfaz web.
       </p>
     </section>
