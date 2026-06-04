@@ -1,3 +1,6 @@
+// todo:
+// falta terminar los juegos de pong, flapy, jump n run
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -151,7 +154,7 @@ export default function Juegos() {
 
   return (
     <main className="w-full">
-      <section className="w-full rounded-[2.5rem] border border-white/10 bg-white/[0.04] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.4)] backdrop-blur-sm md:p-6 lg:p-8">
+      <section className="w-full rounded-[2.5rem] border border-white/10 bg-white/4 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.4)] backdrop-blur-sm md:p-6 lg:p-8">
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-sm font-medium text-cyan-300">Biblioteca</p>
@@ -183,11 +186,11 @@ export default function Juegos() {
           </div>
         </div>
 
-        <div className="relative w-full overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b1224]/80 px-2 py-12 sm:px-4 md:px-6">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#0b1224] to-transparent md:w-24" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#0b1224] to-transparent md:w-24" />
+        <div className="relative w-full overflow-hidden rounded-4xl border border-white/10 bg-[#0b1224]/80 px-2 py-12 sm:px-4 md:px-6">
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-linear-to-r from-[#0b1224] to-transparent md:w-24" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-linear-to-l from-[#0b1224] to-transparent md:w-24" />
 
-          <div className="relative mx-auto h-[430px] w-full max-w-[980px]">
+          <div className="relative mx-auto h-107.5 w-full max-w-245">
             {games.map((game, index) => {
               const offset = mod(index - activeIndex, games.length);
               const state = getCardState(offset, games.length);

@@ -1,3 +1,7 @@
+// todo:
+// poner size razonable (no necesariamente real para el atmega32)
+// falta poner fotos de los juegos
+
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
