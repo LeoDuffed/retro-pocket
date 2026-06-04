@@ -19,6 +19,12 @@ const games = {
     tags: ["Arcade", "Retro", "Puntaje", "1 jugador", "Clásico"],
     size: "2818",
     players: "1 jugador",
+    screenshots: [
+      { src: "/img/snake1.png", alt: "Captura 1 de Snake" },
+      { src: "/img/snake2.png", alt: "Captura 2 de Snake" },
+      { src: "/img/snake3.png", alt: "Captura 3 de Snake" },
+      { src: "/img/snake4.png", alt: "Captura 4 de Snake" },
+    ],
   },
   breakout: {
     slug: "breakout",
@@ -33,6 +39,10 @@ const games = {
     tags: ["Arcade", "Reflejos", "Retro", "1 jugador", "Rápido"],
     size: "2178",
     players: "1 jugador",
+    screenshots: [
+      { src: "/img/break1.png", alt: "Captura 1 de Breakout" },
+      { src: "/img/break2.png", alt: "Captura 2 de Breakout" },
+    ],
   },
   dodge: {
     slug: "dodge",
@@ -47,6 +57,11 @@ const games = {
     tags: ["Arcade", "Reflejos", "Supervivencia", "1 jugador", "Rápido"],
     size: "2356",
     players: "1 jugador",
+    screenshots: [
+      { src: "/img/dodge1.png", alt: "Captura 1 de Dodge Obstacles" },
+      { src: "/img/dodge2.png", alt: "Captura 2 de Dodge Obstacles" },
+      { src: "/img/dodge3.png", alt: "Captura 3 de Dodge Obstacles" },
+    ],
   },
   space: {
     slug: "space",
@@ -61,6 +76,10 @@ const games = {
     tags: ["Arcade", "Shooter", "Retro", "1 jugador", "Oleadas"],
     size: "3658",
     players: "1 jugador",
+    screenshots: [
+      { src: "/img/space1.png", alt: "Captura 1 de Space Invaders" },
+      { src: "/img/space2.png", alt: "Captura 2 de Space Invaders" },
+    ],
   },
   jump: {
     slug: "jump",
@@ -75,6 +94,7 @@ const games = {
     tags: ["Arcade", "Plataformas", "Runner", "1 jugador", "Reflejos"],
     size: "922",
     players: "1 jugador",
+    screenshots: [{ src: "/img/jump.png", alt: "Imagen de Jump N Run" }],
   },
   /*
   tetris: {
@@ -113,7 +133,7 @@ export default function GameDetail() {
   const { slug } = useParams();
   const game = games[slug];
 
-  const [selectedShot, setSelectedShot] = useState(0);
+  const [selectedShotsBySlug, setSelectedShotsBySlug] = useState({});
   const [favorite, setFavorite] = useState(false);
 
   const uploadGame = async () => {
@@ -145,7 +165,9 @@ export default function GameDetail() {
     );
   }
 
-  const thumbnails = ["01", "02", "03", "04", "05"];
+  const screenshots = game.screenshots ?? [];
+  const selectedShot = selectedShotsBySlug[slug] ?? 0;
+  const selectedScreenshot = screenshots[selectedShot] ?? screenshots[0];
 
   return (
     <main className="w-full">
@@ -166,29 +188,39 @@ export default function GameDetail() {
 
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <div className="overflow-hidden rounded-3xl border border-slate-200 bg-[linear-gradient(180deg,#dbeafe,#cbd5e1)] shadow-sm">
-                <div className="flex aspect-video flex-col items-center justify-center text-slate-700">
-                  <span className="text-3xl font-bold md:text-4xl">
-                    {game.title}
-                  </span>
-                  <span className="mt-3 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
-                    Vista {thumbnails[selectedShot]}
-                  </span>
+              <div className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-950 shadow-sm">
+                <div className="flex aspect-video items-center justify-center">
+                  <img
+                    src={selectedScreenshot.src}
+                    alt={selectedScreenshot.alt}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
               </div>
 
               <div className="mt-4 flex gap-3 overflow-x-auto pb-2">
-                {thumbnails.map((thumb, index) => (
+                {screenshots.map((screenshot, index) => (
                   <button
-                    key={`${thumb}-${index}`}
-                    onClick={() => setSelectedShot(index)}
-                    className={`flex h-20 w-28 shrink-0 items-center justify-center rounded-2xl border text-base font-semibold transition text-black/90 ${
+                    key={screenshot.src}
+                    onClick={() =>
+                      setSelectedShotsBySlug((prev) => ({
+                        ...prev,
+                        [slug]: index,
+                      }))
+                    }
+                    className={`flex h-20 w-28 shrink-0 items-center justify-center overflow-hidden rounded-2xl border bg-slate-950 transition ${
                       selectedShot === index
-                        ? "border-red-500 bg-red-50"
-                        : "border-slate-200 bg-slate-50 hover:border-slate-300"
+                        ? "border-red-500"
+                        : "border-slate-200 hover:border-slate-300"
                     }`}
+                    aria-label={`Ver ${screenshot.alt}`}
                   >
-                    Vista {thumb}
+                    <img
+                      src={screenshot.src}
+                      alt={screenshot.alt}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
                   </button>
                 ))}
               </div>
@@ -268,10 +300,13 @@ export default function GameDetail() {
               </p>
             </div>
 
-            <div className="overflow-hidden rounded-3xl border border-slate-200 bg-[linear-gradient(180deg,#dbeafe,#cbd5e1)]">
-              <div className="flex aspect-video items-center justify-center text-3xl font-bold text-slate-700">
-                {game.title}
-              </div>
+            <div className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-950">
+              <img
+                src={screenshots[0].src}
+                alt={screenshots[0].alt}
+                className="aspect-video h-full w-full object-contain"
+                loading="lazy"
+              />
             </div>
           </div>
 
