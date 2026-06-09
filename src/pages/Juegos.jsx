@@ -4,6 +4,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+const LAST_GAME_STORAGE_KEY = "retro-pocket:last-game-slug";
+
 const games = [
   {
     id: 1,
@@ -141,7 +143,16 @@ function getCardState(offset, total) {
 }
 
 export default function Juegos() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(() => {
+    try {
+      const lastGameSlug = window.localStorage.getItem(LAST_GAME_STORAGE_KEY);
+      const lastGameIndex = games.findIndex((game) => game.slug === lastGameSlug);
+
+      return lastGameIndex === -1 ? 0 : lastGameIndex;
+    } catch {
+      return 0;
+    }
+  });
   const centerOffset = games.length % 2 === 0 ? -60 : 0;
 
   const goLeft = () => {

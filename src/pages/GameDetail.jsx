@@ -2,8 +2,10 @@
 // poner size razonable (no necesariamente real para el atmega32)
 // falta poner fotos de los juegos
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+
+const LAST_GAME_STORAGE_KEY = "retro-pocket:last-game-slug";
 
 const games = {
   snake: {
@@ -42,6 +44,8 @@ const games = {
     screenshots: [
       { src: "/img/break1.png", alt: "Captura 1 de Breakout" },
       { src: "/img/break2.png", alt: "Captura 2 de Breakout" },
+      { src: "/img/break3.png", alt: "Captura 3 de Breakout" },
+      { src: "/img/break4.png", alt: "Captura 4 de Breakout" },
     ],
   },
   dodge: {
@@ -79,6 +83,7 @@ const games = {
     screenshots: [
       { src: "/img/space1.png", alt: "Captura 1 de Space Invaders" },
       { src: "/img/space2.png", alt: "Captura 2 de Space Invaders" },
+      { src: "/img/space3.png", alt: "Captura 3 de Space Invaders" },
     ],
   },
   jump: {
@@ -135,6 +140,12 @@ export default function GameDetail() {
 
   const [selectedShotsBySlug, setSelectedShotsBySlug] = useState({});
   const [favorite, setFavorite] = useState(false);
+
+  useEffect(() => {
+    if (!game) return;
+
+    window.localStorage.setItem(LAST_GAME_STORAGE_KEY, game.slug);
+  }, [game]);
 
   const uploadGame = async () => {
     try{
