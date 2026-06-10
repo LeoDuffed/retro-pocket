@@ -280,7 +280,7 @@ export default function GameDetail() {
                     <p className="mt-1 text-2xl font-bold text-slate-900">
                       {game.size} 
                     </p>
-                    <p className="text-black/60 pt-2.5  pl-2">bites</p>
+                    <p className="text-black/60 pt-2.5  pl-2">bytes</p>
                   </div>
                 </div>
 
