@@ -1,6 +1,3 @@
-// todo:
-// falta terminar los juegos de pong, flapy, jump n run
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
