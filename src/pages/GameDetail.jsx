@@ -86,43 +86,6 @@ const games = {
       { src: "/img/space3.png", alt: "Captura 3 de Space Invaders" },
     ],
   },
-  jump: {
-    slug: "jump",
-    title: "Jump N Run",
-    genre: "Arcade",
-    difficulty: "Media",
-    description:
-      "Corre y salta para esquivar obstáculos. Llega lo más lejos posible sin chocar y mejora tu marca.",
-    longDescription:
-      "Jump N Run es un minijuego de plataformas estilo runner pensado para partidas rápidas en Retro Pocket. Tu personaje avanza y el reto es saltar a tiempo para evitar los obstáculos que aparecen en el camino. A medida que progresas el ritmo se vuelve más exigente, así que la precisión y el timing son clave para conseguir la mejor distancia.",
-    controls: ["Saltar", "Pausa"],
-    tags: ["Arcade", "Plataformas", "Runner", "1 jugador", "Reflejos"],
-    size: "922",
-    players: "1 jugador",
-    screenshots: [{ src: "/img/jump.png", alt: "Imagen de Jump N Run" }],
-  },
-  /*
-  tetris: {
-    slug: "tetris",
-    title: "Tetris",
-    genre: "Puzzle",
-    difficulty: "Difícil",
-    description:
-      "Acomoda piezas, completa líneas y evita que la pantalla se llene.",
-    longDescription:
-      "Tetris es uno de los juegos de puzzle más importantes de la historia. La versión para Retro Pocket conserva la dinámica clásica de acomodo de piezas y eliminación de líneas, ofreciendo una experiencia compacta, desafiante y muy adecuada para una consola retro programable.",
-    controls: [
-      "Mover izquierda",
-      "Mover derecha",
-      "Rotar pieza",
-      "Bajar pieza",
-      "Iniciar",
-    ],
-    tags: ["Puzzle", "Retro", "Clásico", "1 jugador", "Bloques"],
-    size: "00000",
-    players: "1 jugador",
-  },
-  */
 };
 
 function InfoRow({ label, value }) {
